@@ -3,12 +3,13 @@
 ## Login Process:
 
 Implemented user authentication using DummyJSON Auth API.
+
 Used the provided login credentials: 
 
 
-**Username: kminchelle**
+### Username: kminchelle
 
-**Password: 0lelplR**
+### Password: 0lelplR
 
 
 **Authorization:**
