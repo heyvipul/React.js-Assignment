@@ -47,8 +47,11 @@ const Home = () => {
     });
 
     setFilteredData(sortedResults);
-
   }, [data,searchTerm,sortOption]);
+
+  const handleAddToCart = (product) => {
+    setCart([...cart, product]);
+  };
 
 
   if(loading){
@@ -75,9 +78,9 @@ const Home = () => {
         </div>
 
         <div>
-          <p>Cart Count: {""}</p>
+          <p>Cart Count: {cart.length}</p>
           <p>
-            Total Amount:{' '} $
+            Total Amount:{' '} ${cart.reduce((total, product) => total + parseFloat(product.price), 0)}
           </p>
       </div>
       
@@ -95,7 +98,7 @@ const Home = () => {
                     <h5>Price : {ele.price}$</h5>
                     <h5>Dicount : {ele.discountPercentage}% Off</h5>
                   </div>
-                  <MDBBtn className="m-4">Add to Cart!</MDBBtn>
+                  <MDBBtn onClick={() => handleAddToCart(ele)} className="m-4">Add to Cart!</MDBBtn>
               </div>
             })
           }
