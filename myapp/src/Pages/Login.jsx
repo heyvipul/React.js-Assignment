@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   MDBContainer,
   MDBInput,
@@ -20,6 +20,14 @@ function Login() {
     const navigate = useNavigate();
     console.log(isAuth);
 
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            setIsAuth(true);
+        }
+    }, [setIsAuth]);
+
+
     async function onSubmit(e){
         e.preventDefault();
         try {
@@ -28,7 +36,7 @@ function Login() {
             password : password
           })
           const data = response.data
-        //   console.log(data);  
+          console.log(data);  
           setIsAuth(true)
           localStorage.setItem("token",data.token) 
           alert("Login Successfull!")
@@ -38,6 +46,16 @@ function Login() {
             console.log(error);
         }
     }
+
+    function Logout(e) {
+        e.preventDefault();
+        setIsAuth(false);
+        localStorage.removeItem("token");
+    }
+  
+  if(isAuth){
+    return <MDBBtn onClick={Logout} className="m-4">Logout!</MDBBtn>
+  }  
 
   return (
     <MDBContainer className="p-3 my-5 d-flex flex-column w-25">

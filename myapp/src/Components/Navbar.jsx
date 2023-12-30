@@ -1,18 +1,20 @@
 import React from 'react'
+import "../App.css"
 import { Link } from 'react-router-dom'
+
 
 const Navbar = () => {
 
     const links = [
-        {path : "/", title : "Login"},
-        {path : "/home" , title : "Home"}
+        {path : "/home" , title : "Home"},
+        {path : "/", title : "Profile"}
     ]
 
   return (
-    <div>
+    <div id='navbar'>
         {
             links?.map(function(ele,index){
-                return <Link key={index} to={ele.path}>{ele.title}</Link>
+                return <Link id='font' key={index} to={ele.path}>{ele.title}</Link>
             })
         }
     </div>
