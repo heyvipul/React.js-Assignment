@@ -4,8 +4,10 @@
 
 Implemented user authentication using DummyJSON Auth API.
 Used the provided login credentials: 
-Username: kminchelle
-Password: 0lelplR.
+
+
+**Username: kminchelle**
+**Password: 0lelplR**
 
 
 **Authorization:**
