@@ -1,5 +1,7 @@
 # This project implements a simple e-commerce application with the following features:
 
+## Deployed link : https://658ffdf63f29825a933882d0--stirring-kashata-be9ab6.netlify.app/
+
 ## Login Process:
 
 Implemented user authentication using DummyJSON Auth API.
